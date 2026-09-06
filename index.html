@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- REPLACE: Change this title when you decide on your final site name. -->
+  <title>Jasper | Reverse Engineering & Competitive Programming</title>
+
+  <!-- REPLACE: This description is shown by search engines. -->
+  <meta
+    name="description"
+    content="Jasper's portfolio for reverse engineering writeups, programming projects, and technical notes."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Accessibility: keyboard users can skip straight to the main content. -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <!-- REPLACE: Use your preferred display name or logo here. -->
+      <a class="logo" href="#home" aria-label="Jasper's homepage">
+        <span class="prompt" aria-hidden="true">./</span>jasper
+      </a>
+
+      <!-- The button is only visible on small screens. -->
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-links"
+        aria-label="Open navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO: Keep this short. It should explain who you are immediately. -->
+    <section class="hero container" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span aria-hidden="true">01.</span> Hello, world.</p>
+        <h1>I take programs apart<br><span>to understand how they work.</span></h1>
+        <p class="hero-text">
+          I’m Yan Zixuan(Jasper), a student interested in reverse engineering,
+          CTF-style challenges, and competitive programming.
+        </p>
+
+        <div class="hero-actions">
+          <!-- This link already points to your Crackmes.one writeups repository. -->
+          <a
+            class="button button-primary"
+            href="https://github.com/jasperfromsingapore123-crypto/Crackmes.one-Writeups"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View my writeups <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-secondary" href="#projects">Explore projects</a>
+        </div>
+      </div>
+
+      <!-- ADD: Change these lines to your current tools or learning goals. -->
+      <div class="terminal reveal" aria-label="A summary of Jasper's interests">
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+          <p>jasper@portfolio:~</p>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> whoami</p>
+          <p class="output">Yan Zixuan</p>
+          <p><span class="prompt">$</span> interests --list</p>
+          <p class="output">rev · ctf · algorithms · music</p>
+          <p><span class="prompt">$</span> currently_learning</p>
+          <p class="output">x86-64 · C++ · debugging<span class="cursor">_</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT: Add or remove paragraphs as your experience grows. -->
+    <section class="section container" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span aria-hidden="true">02.</span> About</p>
+        <h2>Curious about what happens below the surface.</h2>
+      </div>
+
+      <div class="about-grid reveal">
+        <p>
+          I enjoy examining compiled programs, tracing their logic, and writing
+          clear explanations of what I discover. My current project is a public
+          collection of educational writeups for challenges from Crackmes.one.
+        </p>
+        <p>
+          I also solve competitive programming problems on Codebreaker to improve my algorthmic thinking and C++ skills.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS: Duplicate a <article class="project-card"> block to add a project. -->
+    <section class="section section-tinted" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span aria-hidden="true">03.</span> Selected work</p>
+          <h2>Projects and writeups</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured reveal">
+            <div>
+              <p class="project-type">Featured repository</p>
+              <h3>Crackmes.one Writeups</h3>
+              <p>
+                Educational reverse-engineering notes, explanations, and solve
+                scripts for challenges from Crackmes.one.
+              </p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>Reverse Engineering</li>
+              <li>Python</li>
+              <li>C++</li>
+              <li>GDB</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/jasperfromsingapore123-crypto/Crackmes.one-Writeups"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open repository <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <!-- REPLACE: Put one of your competitive-programming projects here. -->
+          <article class="project-card reveal">
+            <div>
+              <p class="project-type">Competitive programming</p>
+              <h3>Competitive Programming</h3>
+              <p>
+                Im still working on a repository for this!!
+              </p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>C++</li>
+              <li>Algorithms</li>
+            </ul>
+            <!-- REPLACE: Change # to the GitHub repository or solution URL. -->
+           
+          </article>
+
+          <!-- REPLACE: Use this card for a CTF tool, website, or another project. -->
+          <article class="project-card reveal">
+            <div>
+              <p class="project-type">Personal project</p>
+              <h3>My Next Project</h3>
+              <p>
+                tbd! But please do keep a lookout for it in the future!
+              </p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies used">
+            </ul>
+            <!-- REPLACE: Change # to your project URL. -->
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERESTS: These cards show personality without exposing private details. -->
+    <section class="section container" id="interests">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span aria-hidden="true">04.</span> Beyond code</p>
+        <h2>Things I enjoy</h2>
+      </div>
+
+      <div class="interest-grid">
+        <article class="interest-card reveal">
+          <p class="interest-number" aria-hidden="true">01</p>
+          <h3>Reverse engineering</h3>
+          <p>Analyzing binaries, debugging programs, and explaining hidden logic.</p>
+        </article>
+
+        <article class="interest-card reveal">
+          <p class="interest-number" aria-hidden="true">02</p>
+          <h3>Competitive programming</h3>
+          <p>Practising C++, algorithms, data structures, and problem solving.</p>
+        </article>
+
+        <article class="interest-card reveal">
+          <p class="interest-number" aria-hidden="true">03</p>
+          <h3>Music</h3>
+          <p>Listening to electronic music, especially tracks by Alan Walker, especially "The Spectre" I also like "Wonderland" by Axel Johnsson!</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LINKS: Replace placeholders with profiles you are comfortable sharing publicly. -->
+    <!-- LINKS -->
+<section class="section section-tinted" id="links">
+  <div class="container links-layout">
+
+    <!-- Left side: heading -->
+    <div class="section-heading reveal">
+      <p class="eyebrow">
+        <span aria-hidden="true">05.</span>
+        Contact
+      </p>
+
+      <h2>Connect with me</h2>
+
+      <p>
+        You can view my profile or contact me through email.
+      </p>
+    </div>
+
+    <!-- Right side: links -->
+    <div class="link-list reveal">
+
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/yan-zixuan-a7329641b/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>
+          <strong>LinkedIn</strong><br>
+          <small>View my professional profile</small>
+        </span>
+
+        <span aria-hidden="true">↗</span>
+      </a>
+
+      <!-- Gmail -->
+      <a href="mailto:jasperfromsingapore@gmail.com">
+        <span>
+          <strong>Email</strong><br>
+          <small>Send me a message at: jasperfromsingapore123@gmail.com</small>
+        </span>
+
+        <span aria-hidden="true">↗</span>
+      </a>
+      <!-- Discord -->
+  <a
+  href="https://discord.com/users/1486678199097233591"
+  target="_blank"
+  rel="noopener noreferrer"
+  
+  >
+  <span>
+    <strong>Discord</strong><br>
+    <small>Connect with me on Discord</small>
+  </span>
+
+  <span aria-hidden="true">↗</span>
+</a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Close the main element before the footer -->
+</main>
+    
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <!-- REPLACE: Add a contact link only if you want it public. -->
+      <p>Yan Zixuan (Jasper)</p>
+      <p>© <span id="current-year"></span> Yan Zixuan (Jasper)</p>
+    </div>
+  </footer>
+</body>
+</html>

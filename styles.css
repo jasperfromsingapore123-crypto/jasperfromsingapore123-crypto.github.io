@@ -1,0 +1,615 @@
+/* ================================================================
+   1. DESIGN TOKENS
+   Change these variables to recolor most of the site in one place.
+   ================================================================ */
+:root {
+  --background: #080c10;
+  --surface: #0d131a;
+  --surface-light: #121b24;
+  --text: #edf3f7;
+  --muted: #9aa9b7;
+  --accent: #56f2b2;
+  --accent-dark: #173f34;
+  --border: #24313d;
+  --max-width: 1120px;
+  --radius: 14px;
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.32);
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* ================================================================
+   2. RESET AND GLOBAL STYLES
+   You normally do not need to change this section.
+   ================================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(86, 242, 178, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(86, 242, 178, 0.025) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(calc(100% - 2.5rem), var(--max-width));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #04100c;
+  font-weight: 800;
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ================================================================
+   3. NAVIGATION
+   ================================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(36, 49, 61, 0.78);
+  background: rgba(8, 12, 16, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.nav {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.prompt,
+.eyebrow,
+.text-link,
+.logo:hover {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--text);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+/* ================================================================
+   4. HERO
+   ================================================================ */
+.hero {
+  min-height: calc(100vh - 4.5rem);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: center;
+  padding-block: 6rem;
+}
+
+.eyebrow,
+.project-type {
+  margin: 0 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+.hero h1 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.65rem, 7vw, 5.7rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.hero h1 span {
+  color: var(--muted);
+}
+
+.hero-text {
+  max-width: 640px;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #04100c;
+}
+
+.button-secondary {
+  color: var(--accent);
+}
+
+.button-secondary:hover {
+  background: var(--accent-dark);
+}
+
+.terminal {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #070b0f;
+  box-shadow: var(--shadow);
+  transform: rotate(1.4deg);
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-light);
+}
+
+.terminal-bar span {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #56616b;
+}
+
+.terminal-bar span:first-child { background: #ff6868; }
+.terminal-bar span:nth-child(2) { background: #ffd166; }
+.terminal-bar span:nth-child(3) { background: var(--accent); }
+
+.terminal-bar p {
+  margin: 0 0 0 0.45rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.terminal-body {
+  min-height: 18rem;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.84rem, 1.7vw, 0.95rem);
+}
+
+.terminal-body p {
+  margin: 0 0 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.terminal-body .output {
+  margin: -0.45rem 0 1.1rem;
+  color: var(--muted);
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ================================================================
+   5. SHARED SECTION STYLES
+   ================================================================ */
+.section {
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+.section-tinted {
+  border-block: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.section-heading > p:last-child:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.about-grid p {
+  margin: 0;
+}
+
+/* ================================================================
+   6. PROJECT CARDS
+   Duplicate a card in index.html; the grid adapts automatically.
+   ================================================================ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  min-height: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-light);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(86, 242, 178, 0.55);
+}
+
+.project-card.featured {
+  grid-column: 1 / -1;
+  min-height: 20rem;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(86, 242, 178, 0.14), transparent 30%),
+    var(--surface-light);
+}
+
+.project-card h3,
+.interest-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.project-card p:not(.project-type),
+.interest-card p:last-child {
+  max-width: 650px;
+  color: var(--muted);
+}
+
+.project-type {
+  color: var(--accent);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.text-link {
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-underline-offset: 0.35rem;
+}
+
+/* Remove this class after replacing a placeholder URL. */
+.placeholder-link {
+  text-decoration-style: dashed;
+}
+
+/* ================================================================
+   7. INTERESTS AND LINKS
+   ================================================================ */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.interest-card {
+  padding: 1.6rem;
+  border-top: 2px solid var(--accent);
+  background: var(--surface);
+}
+
+.interest-number {
+  margin: 0 0 3rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.links-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(3rem, 8vw, 7rem);
+}
+
+.link-list {
+  border-top: 1px solid var(--border);
+}
+
+.link-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 0.35rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  text-decoration: none;
+  transition: color 180ms ease, padding 180ms ease;
+}
+
+.link-list a:hover {
+  padding-inline: 0.75rem;
+  color: var(--accent);
+}
+
+/* ================================================================
+   8. FOOTER AND OPTIONAL SCROLL ANIMATION
+   The .js class is added by script.js, so content stays visible if JS fails.
+   ================================================================ */
+.site-footer {
+  padding-block: 2rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.footer-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-layout p {
+  margin: 0;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================
+   9. RESPONSIVE DESIGN
+   Add any phone/tablet-specific changes inside these media queries.
+   ================================================================ */
+@media (max-width: 800px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.75rem 1.25rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.85rem 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .hero,
+  .links-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 5rem;
+  }
+
+  .terminal {
+    transform: none;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(calc(100% - 1.5rem), var(--max-width));
+  }
+
+  .about-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.featured {
+    grid-column: auto;
+  }
+
+  .hero-actions,
+  .button {
+    width: 100%;
+  }
+
+  .footer-layout {
+    flex-direction: column;
+  }
+}
+
+/* Respect people who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
