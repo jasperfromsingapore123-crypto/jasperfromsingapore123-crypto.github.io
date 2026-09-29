@@ -4,37 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- REPLACE: Change this title when you decide on your final site name. -->
   <title>Jasper | All about me</title>
 
-  <!-- REPLACE: This description is shown by search engines. -->
   <meta
     name="description"
-    content="Jasper's portfolio for reverse engineering writeups, programming projects, and technical notes."
+    content="Jasper's portfolio for reverse engineering writeups, programming projects, CTF experiences, and technical notes."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
     rel="stylesheet"
   >
+
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- Accessibility: keyboard users can skip straight to the main content. -->
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
-      <!-- REPLACE: Use your preferred display name or logo here. -->
       <a class="logo" href="#home" aria-label="Jasper's homepage">
         <span class="prompt" aria-hidden="true">./</span>jasper
       </a>
 
-      <!-- The button is only visible on small screens. -->
       <button
         class="nav-toggle"
         type="button"
@@ -50,6 +47,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#ctfs">CTFs</a></li>
         <li><a href="#interests">Interests</a></li>
         <li><a href="#links">Links</a></li>
       </ul>
@@ -57,26 +55,35 @@
   </header>
 
   <main id="main-content">
-    <!-- HERO: Keep this short. It should explain who you are immediately. -->
+    <!-- HERO -->
     <section class="hero container" id="home">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span aria-hidden="true">01.</span> Hello, world.</p>
-        <h1>I take programs apart<br><span>to understand how they work.</span></h1>
+        <p class="eyebrow">
+          <span aria-hidden="true">01.</span>
+          Hello, world.
+        </p>
+
+        <h1>
+          <span class="hero-title-main">I take programs apart</span>
+          <span class="hero-title-accent">
+            to understand how they work.
+          </span>
+        </h1>
 
         <p class="hero-text">
-          I’m Yan Zixuan(Jasper), a secondary school student interested in reverse engineering,
-          CTF-style challenges, and competitive programming.
+          I’m Yan Zixuan (Jasper), a secondary school student interested in
+          reverse engineering, CTF-style challenges, and competitive programming.
         </p>
 
         <div class="hero-actions">
-          <!-- This link already points to your Crackmes.one writeups repository. -->
           <a
             class="button button-primary"
             href="https://github.com/jasperfromsingapore123-crypto/Crackmes.one-Writeups"
             target="_blank"
             rel="noopener noreferrer"
           >
-            View my writeups <span aria-hidden="true">↗</span>
+            View my writeups
+            <span aria-hidden="true">↗</span>
           </a>
 
           <a class="button button-secondary" href="#projects">
@@ -85,8 +92,10 @@
         </div>
       </div>
 
-      <!-- ADD: Change these lines to your current tools or learning goals. -->
-      <div class="terminal reveal" aria-label="A summary of Jasper's interests">
+      <div
+        class="terminal reveal"
+        aria-label="A summary of Jasper's interests"
+      >
         <div class="terminal-bar">
           <span></span>
           <span></span>
@@ -95,13 +104,28 @@
         </div>
 
         <div class="terminal-body">
-          <p><span class="prompt">$</span> whoami</p>
+          <p>
+            <span class="prompt">$</span>
+            whoami
+          </p>
           <p class="output">Yan Zixuan</p>
 
-          <p><span class="prompt">$</span> interests --list</p>
-          <p class="output">rev · ctf · algorithms · music</p>
+          <p>
+            <span class="prompt">$</span>
+            focus --current
+          </p>
+          <p class="output">rev · ctf · algorithms</p>
 
-          <p><span class="prompt">$</span> currently_learning</p>
+          <p>
+            <span class="prompt">$</span>
+            latest --project
+          </p>
+          <p class="output">Crackmes.one writeups</p>
+
+          <p>
+            <span class="prompt">$</span>
+            currently_learning
+          </p>
           <p class="output">
             x86-64 · C++ · debugging<span class="cursor">_</span>
           </p>
@@ -109,40 +133,67 @@
       </div>
     </section>
 
-    <!-- ABOUT: Add or remove paragraphs as your experience grows. -->
+    <!-- ABOUT -->
     <section class="section container" id="about">
       <div class="section-heading reveal">
-        <p class="eyebrow"><span aria-hidden="true">02.</span> About</p>
+        <p class="eyebrow">
+          <span aria-hidden="true">02.</span>
+          About
+        </p>
+
         <h2>Curious about what happens below the surface.</h2>
       </div>
 
       <div class="about-grid reveal">
-        <p>
-          I enjoy examining compiled programs, tracing their logic, and writing
-          clear explanations of what I discover. My current project is a public
-          collection of educational writeups for challenges from Crackmes.one.
-        </p>
+        <dl class="about-facts" aria-label="A quick profile">
+          <div>
+            <dt>Current focus</dt>
+            <dd>Reverse engineering and CTFs</dd>
+          </div>
 
-        <p>
-          I also solve competitive programming problems on Codebreaker to improve my algorthmic thinking and C++ skills.
-          Also, I can use Azure and Microsoft Foundry to deploy my own projects and applications. Yay!
-        </p>
+          <div>
+            <dt>Languages</dt>
+            <dd>C++ and Python</dd>
+          </div>
+
+          <div>
+            <dt>Also into</dt>
+            <dd>Algorithms, cloud projects, and music</dd>
+          </div>
+        </dl>
+
+        <div class="about-copy">
+          <p>
+            I enjoy examining compiled programs, tracing their logic, and
+            writing clear explanations of what I discover. My current project
+            is a public collection of educational writeups for challenges from
+            Crackmes.one.
+          </p>
+
+          <p>
+            I also solve competitive programming problems on Codebreaker to
+            improve my algorithmic thinking and C++ skills. I use Azure and
+            Microsoft Foundry to deploy my own projects and experiments, too.
+            Pretty cool!
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- PROJECTS: Duplicate a <article class="project-card"> block to add a project. -->
+    <!-- PROJECTS -->
     <section class="section section-tinted" id="projects">
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">
-            <span aria-hidden="true">03.</span> Selected work
+            <span aria-hidden="true">03.</span>
+            Selected work
           </p>
 
           <h2>Projects and writeups</h2>
         </div>
 
         <div class="project-grid">
-          <article class="project-card featured reveal">
+          <article class="project-card featured is-linked reveal">
             <div>
               <p class="project-type">Featured repository</p>
               <h3>Crackmes.one Writeups</h3>
@@ -166,120 +217,124 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open repository <span aria-hidden="true">↗</span>
+              Open repository
+              <span aria-hidden="true">↗</span>
             </a>
           </article>
 
-          <!-- REPLACE: Put one of your competitive-programming projects here. -->
           <article class="project-card reveal">
             <div>
-              <p class="project-type">Competitive programming</p>
-              <h3>Competitive Programming</h3>
+              <p class="project-type">Prep in progress</p>
+              <h3>Competitive programming practice</h3>
 
               <p>
-                Im still working on a repository for this!!
+                I solve problems on Codebreaker to sharpen my C++, algorithms,
+                and problem-solving skills. A public solutions repository is
+                in progress.
               </p>
             </div>
 
-            <ul class="tag-list" aria-label="Technologies used">
+            <ul class="tag-list" aria-label="Skills and project status">
               <li>C++</li>
               <li>Algorithms</li>
+              <li>In progress</li>
             </ul>
-
-            <!-- REPLACE: Change # to the GitHub repository or solution URL. -->
           </article>
 
-          <!-- REPLACE: Use this card for a CTF tool, website, or another project. -->
-          <article class="project-card reveal">
-            <div>
-              <p class="project-type">Personal project</p>
-              <h3>My Next Project</h3>
 
-              <p>
-                tbd! But please do keep a lookout for it in the future!
-              </p>
-            </div>
-
-            <ul class="tag-list" aria-label="Technologies used">
             </ul>
-
-            <!-- REPLACE: Change # to your project URL. -->
           </article>
         </div>
       </div>
     </section>
+
     <!-- CTF EXPERIENCE -->
-<section class="section container" id="ctfs">
-  <div class="section-heading reveal">
-    <p class="eyebrow">
-      <span aria-hidden="true">04.</span> CTF Experience
-    </p>
-
-    <h2>CTFs I've participated in</h2>
-  </div>
-
-  <div class="ctf-list reveal">
-
-    <div class="ctf-entry">
-      <div>
-        <h3>Sieberrsec CTF 2026</h3>
-        <p>
-          Emerged as a Finalist, my first ever in person CTF competition.
+    <section class="section container" id="ctfs">
+      <div class="section-heading reveal">
+        <p class="eyebrow">
+          <span aria-hidden="true">04.</span>
+          CTF experience
         </p>
+
+        <h2>Challenges, teams, and good stories.</h2>
       </div>
 
-      <div class="ctf-meta">
-        <span>2026</span>
-        <span>Participant</span>
-      </div>
-    </div>
+      <div class="ctf-list reveal">
+        <article class="ctf-entry">
+          <div class="ctf-main">
+            <p class="ctf-result">Finalist</p>
+            <h3>Sieberrsec CTF 2026</h3>
 
-    <div class="ctf-entry">
-      <div>
-        <h3>Faust CTF</h3>
-        <p>
-          Together with Malaysia Hardware Hacking Community, we participated in this Attack and Defense CTF.
-        </p>
-      </div>
+            <p>
+              My first in-person CTF competition—and I made it to the finals.
+            </p>
+          </div>
 
-      <div class="ctf-meta">
-        <span>2026</span>
-        <span>Participant</span>
-      </div>
-    </div>
+          <div class="ctf-meta">
+            <span>2026</span>
+            <span>In person</span>
+          </div>
+        </article>
 
-      <div class="ctf-entry">
-      <div>
-        <h3>Blahaj x I.YCEP CTF</h3>
-        <p>
-          Participated in the non-competitive CTF. Great experience as I learnt a lot and truly improved my Reverse Engineering skills.
-        </p>
-      </div>
-      <div class="ctf-meta">
-        <span>2026</span>
-        <span>Participant</span>
-      </div>
-    </div>
-        <h3>Cyber League Major(Quals)</h3>
-        <p>
-          As a solo participant, I am honoured to solve all but one challenge, and I was left as the 21th place participant
-        </p>
-      </div>
+        <article class="ctf-entry">
+          <div class="ctf-main">
+            <p class="ctf-result">Team event</p>
+            <h3>Faust CTF</h3>
 
-      <div class="ctf-meta">
-        <span>2026</span>
-        <span>Participant</span>
+            <p>
+              I joined the Malaysia Hardware Hacking Community for this
+              attack-and-defense CTF.
+            </p>
+          </div>
+
+          <div class="ctf-meta">
+            <span>2026</span>
+            <span>Attack &amp; defense</span>
+          </div>
+        </article>
+
+        <article class="ctf-entry">
+          <div class="ctf-main">
+            <p class="ctf-result">Learning event</p>
+            <h3>Blahaj x I.YCEP CTF</h3>
+
+            <p>
+              A non-competitive CTF where I learned a lot and levelled up my
+              reverse-engineering skills.
+            </p>
+          </div>
+
+          <div class="ctf-meta">
+            <span>2026</span>
+            <span>Non-competitive</span>
+          </div>
+        </article>
+
+        <article class="ctf-entry">
+          <div class="ctf-main">
+            <p class="ctf-result">21st place</p>
+            <h3>Cyber League Major (Qualifiers)</h3>
+
+            <p>
+              Competing solo, I solved all but one challenge and finished in
+              21st place.
+            </p>
+          </div>
+
+          <div class="ctf-meta">
+            <span>2026</span>
+            <span>Solo qualifier</span>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-    <!-- INTERESTS: These cards show personality without exposing private details. -->
+    <!-- INTERESTS -->
     <section class="section container" id="interests">
       <div class="section-heading reveal">
         <p class="eyebrow">
-          <span aria-hidden="true">04.</span> 
+          <span aria-hidden="true">05.</span>
+          Interests
         </p>
 
         <h2>Things I enjoy</h2>
@@ -289,44 +344,51 @@
         <article class="interest-card reveal">
           <p class="interest-number" aria-hidden="true">01</p>
           <h3>Reverse engineering</h3>
-          <p>Analyzing binaries, debugging programs, and explaining hidden logic.</p>
+
+          <p>
+            Analyzing binaries, debugging programs, and explaining hidden logic.
+          </p>
         </article>
 
         <article class="interest-card reveal">
           <p class="interest-number" aria-hidden="true">02</p>
           <h3>Competitive programming</h3>
-          <p>Practising C++, algorithms, data structures, and problem solving.</p>
+
+          <p>
+            Practising C++, algorithms, data structures, and problem solving.
+          </p>
         </article>
 
         <article class="interest-card reveal">
           <p class="interest-number" aria-hidden="true">03</p>
           <h3>Music</h3>
-          <p>Listening to electronic music, especially tracks by Alan Walker, especially "The Spectre" I also like "Wonderland" by Axel Johnsson!</p>
+
+          <p>
+            Electronic music, especially “The Spectre” by Alan Walker and
+            “Wonderland” by Axel Johansson.
+          </p>
         </article>
       </div>
     </section>
 
-    <!-- LINKS: Replace placeholders with profiles you are comfortable sharing publicly. -->
-    <!-- LINKS -->
+    <!-- CONTACT -->
     <section class="section section-tinted" id="links">
       <div class="container links-layout">
-        <!-- Left side: heading -->
         <div class="section-heading reveal">
           <p class="eyebrow">
-            <span aria-hidden="true">05.</span>
+            <span aria-hidden="true">06.</span>
             Contact
           </p>
 
           <h2>Connect with me</h2>
 
           <p>
-            You can view my profile or contact me through email.
+            Want to talk about reverse engineering, CTFs, programming, or just
+            say hello? Feel free to reach out.
           </p>
         </div>
 
-        <!-- Right side: links -->
         <div class="link-list reveal">
-          <!-- LinkedIn -->
           <a
             href="https://www.linkedin.com/in/yan-zixuan-a7329641b/"
             target="_blank"
@@ -340,17 +402,17 @@
             <span aria-hidden="true">↗</span>
           </a>
 
-          <!-- Gmail -->
           <a href="mailto:jasperfromsingapore@gmail.com">
             <span>
               <strong>Email</strong><br>
-              <small>Send me a message at: jasperfromsingapore123@gmail.com</small>
+              <small>
+                Send me a message at jasperfromsingapore@gmail.com
+              </small>
             </span>
 
             <span aria-hidden="true">↗</span>
           </a>
 
-          <!-- Discord -->
           <a
             href="https://discord.com/users/1486678199097233591"
             target="_blank"
@@ -370,7 +432,6 @@
 
   <footer class="site-footer">
     <div class="container footer-layout">
-      <!-- REPLACE: Add a contact link only if you want it public. -->
       <p>Yan Zixuan (Jasper)</p>
       <p>© <span id="current-year"></span> Yan Zixuan (Jasper)</p>
     </div>
